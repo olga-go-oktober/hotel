@@ -1,0 +1,80 @@
+@font-face {
+    font-family: OptimaProDemiBold;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../fonts/OptimaProDemiBold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: Merriweather Sans;
+    font-style: bold;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../fonts/merriweather-sans-v26-latin-700.woff2") format("woff2");
+    
+}
+@font-face {
+    font-family: Merriweather Sans;
+    font-style: normal;
+    font-display: swap;
+    src: url("../fonts/merriweather-sans-v26-latin-regular.woff2") format("woff2");
+    
+}
+
+@media (min-width: 76px) {
+    .richtext-wrapper {
+        /* line-height: 150%;
+        font-size: 1.125rem; */
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        
+    }
+  }
+    
+/* CSS Variables */
+
+@theme {
+    --font-heading: OptimaProDemiBold, sans-serif;
+    --font-subline: Merriweather Sans, sans-serif;
+    --font-copy: Merriweather Sans, sans-serif;
+
+    --color-light-grey: #F8F4F0;
+    --color-dark-grey: #E3DEDA;
+    --color-black: #282828;
+
+}
+
+
+
+
+/* Links in text */
+p > a {
+
+    @apply underline hover:no-underline;
+}
+
+h2 {
+    @apply hyphens-auto	text-balance pt-1 font-heading text-4xl font-semibold leading-[130%] md:text-5xl text-black
+}
+
+.img-text-title h2 {
+    @apply text-3xl font-semibold leading-[130%] md:text-3xl lg:text-4xl text-black
+}
+
+.main-title {
+    @apply mt-12 mb-4
+}
+/* text in footer */
+.footer-title {
+    @apply hyphens-auto font-copy text-sm font-bold !leading-[140%] md:text-base text-black text-sm md:text-sm
+}
+.footer-text {
+    @apply hyphens-auto font-copy text-sm !leading-[140%] md:text-base font-normal text-black max-w-max text-sm md:text-sm
+}
+
+/* subtitle */
+.text-subline {
+    @apply  hyphens-auto text-balance font-semibold leading-[150%] lg:text-2xl text-xl text-black
+}
