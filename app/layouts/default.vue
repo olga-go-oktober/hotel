@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import HeaderNavSection from '~/components/layoutsElement/HeaderNavSection.vue';
-import  FooterSection from '~/components/layoutsElement/FooterSection.vue'
+import FooterSection from '~/components/layoutsElement/FooterSection.vue';
+import ErrorBoundary from '~/components/ErrorBoundary.vue';
 </script>
 
 <template>
-    <div>
-        <HeaderNavSection/>
+  <div>
+    <ErrorBoundary>
+      <HeaderNavSection />
+      <main>
         <slot />
-        <FooterSection />
-    </div>
+      </main>
+      <FooterSection />
+    </ErrorBoundary>
+  </div>
 </template>

@@ -1,25 +1,29 @@
 <template>
-    <div class="flex w-full flex-col gap-0">
-      <TitelVue class="img-text-title "
-        :title="title"/>
+  <div class="flex w-full flex-col gap-0">
+    <TitelVue 
+      class="img-text-title"
+      :title="title"
+    />
 
-      <div class="richtext-wrapper md:text-md">
-        <TextCopy v-if="textOne" :textOne="textOne" />
-        <TextCopy v-if="textTwo" :textOne="textTwo" /> 
-
-      </div>
+    <div class="richtext-wrapper md:text-md">
+      <TextCopy v-if="textOne" :textOne="textOne" />
+      <TextCopy v-if="textTwo" :textOne="textTwo" />
+      <TextCopy v-if="textThree" :textOne="textThree" />
     </div>
-  </template>
+  </div>
+</template>
     
-  <script setup>
-  import TitelVue from '../section/TitelVue.vue'
-  import TextCopy from './TextCopy.vue'
-  
-  defineProps({
-    title: String,
-    textOne: String,
-    textTwo: String
+<script setup lang="ts">
+import TitelVue from '../section/TitelVue.vue';
+import TextCopy from './TextCopy.vue';
 
-  })
-  </script>
+interface Props {
+  title: string;
+  textOne?: string;
+  textTwo?: string;
+  textThree?: string;
+}
+
+defineProps<Props>();
+</script>
   

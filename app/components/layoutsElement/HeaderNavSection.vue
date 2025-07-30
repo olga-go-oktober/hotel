@@ -3,21 +3,8 @@ import { ref } from "vue";
 import Burger from "../icons/Burger.vue";
 import Close from "../icons/Close.vue";
 import Navigation from '../layoutsElement/header/Navigation.vue';
-
-const menuContent = [
-  { menuItem: "Hotelausstattung",
-    path: "/hotelausstattung"
-   },
-  { menuItem: "Service & Qualität",
-    path: "/service-qualitaet"
-   },
-  { menuItem: "Über uns",
-    path: "/ueber-uns"
-   },
-  { menuItem: "Kontakt",
-    path: "/kontakt"
-   },
-];
+import DropdownNavigation from '../layoutsElement/header/DropdownNavigation.vue';
+import { MENU_ITEMS } from '~/constants/data';
 
 const menuOpen = ref(false);
 
@@ -37,13 +24,15 @@ function closeMenu() {
     <div class="mx-auto max-w-7xl">
       <div class="flex flex-col gap-5">
         <div class="flex items-center justify-between flex-wrap">
+          <!-- Logo -->
           <NuxtLink
             to="/"
             class="w-[120px] outline-offset-2 outline-focus-dark focus-visible:outline lg:w-[156px]"
           >
             <img class="w-32" src="/logo.svg" alt="allnatura_logo" />
           </NuxtLink>
-          <!-- Burger Button nur auf mobilen Geraeten -->
+          
+          <!-- Burger Button nur auf mobilen Geräten -->
           <button
             @click="toggleMenu"
             class="md:hidden focus:outline-none z-50"
@@ -51,59 +40,95 @@ function closeMenu() {
           >
             <Burger />
           </button>
-          <!-- Mobile Menü: sichtbar wenn burger geklickt, nur auf mobilen Geräten -->
-          <div v-if="menuOpen" class="md:hidden">
-            <Navigation
-              v-for="(item, index) in menuContent"
-              :key="index"
-              :menuItem="item.menuItem"
-              :path="item.path"
-            />
-          </div>
-          <!-- Mobile Overlay Menü -->
-          <transition name="fade">
-            <div
-              v-if="menuOpen"
-              class="fixed inset-0 bg-black bg-opacity-70 z-40 flex justify-center items-center"
-              @click.self="closeMenu"
-            >
-              <nav class="bg-white rounded-lg w-3/4 max-w-xs p-6">
-                <button
-                  @click="closeMenu"
-                  aria-label="Close menu"
-                  class="mb-6 text-2xl font-bold"
-                >
-                  <Close />
-                </button>
-                <ul class="flex flex-col gap-6">
-                  <li v-for="(item, index) in menuContent" :key="index">
-                    <a
-                      href="#"
-                      @click="closeMenu"
-                      class="block text-lg font-semibold"
-                    >
-                      {{ item.menuItem }}
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </transition>
 
-          <!-- Menüzeile: Desktop-Version ab md -->
-          <div
-            class="hidden md:flex items-center gap-6 whitespace-nowrap overflow-x-auto"
-          >
-            <Navigation
-              v-for="(item, index) in menuContent"
-              :key="index"
-              :menuItem="item.menuItem"
-              :path="item.path"
-
-            />
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center gap-6 whitespace-nowrap overflow-x-auto">
+            <template v-for="(item, index) in MENU_ITEMS" :key="index">
+              <!-- Dropdown Navigation für Hotelausstattung -->
+              <DropdownNavigation
+                v-if="item.submenu"
+                :menuItem="item.menuItem"
+                :path="item.path"
+                :submenu="item.submenu"
+              />
+              <!-- Normale Navigation für andere Menüpunkte -->
+              <Navigation
+                v-else
+                :menuItem="item.menuItem"
+                :path="item.path"
+              />
+            </template>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Mobile Overlay Menü -->
+    <transition name="fade">
+      <div
+        v-if="menuOpen"
+        class="fixed inset-0 bg-black bg-opacity-70 z-40 flex justify-center items-center md:hidden"
+        @click.self="closeMenu"
+      >
+        <nav class="bg-white rounded-lg w-3/4 max-w-xs p-6">
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-xl font-semibold">Menü</h2>
+            <button
+              @click="closeMenu"
+              aria-label="Close menu"
+              class="text-gray-500 hover:text-gray-700"
+            >
+              <Close />
+            </button>
+          </div>
+          <ul class="flex flex-col gap-4">
+            <li v-for="(item, index) in MENU_ITEMS" :key="index">
+              <!-- Mobile Navigation mit Submenu -->
+              <div v-if="item.submenu" class="mb-4">
+                <NuxtLink
+                  :to="item.path"
+                  class="block text-lg font-medium text-gray-700 hover:text-gray-900 py-2"
+                >
+                  {{ item.menuItem }}
+                </NuxtLink>
+                <!-- Mobile Submenu -->
+                <ul class="ml-4 mt-2 space-y-2">
+                  <li v-for="(subItem, subIndex) in item.submenu" :key="subIndex">
+                    <NuxtLink
+                      :to="subItem.path"
+                      @click="closeMenu"
+                      class="block text-sm text-gray-600 hover:text-gray-800 py-1"
+                    >
+                      {{ subItem.menuItem }}
+                    </NuxtLink>
+                  </li>
+                </ul>
+              </div>
+              <!-- Normale Mobile Navigation -->
+              <NuxtLink
+                v-else
+                :to="item.path"
+                @click="closeMenu"
+                class="block text-lg font-medium text-gray-700 hover:text-gray-900 py-2"
+              >
+                {{ item.menuItem }}
+              </NuxtLink>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </transition>
   </header>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
