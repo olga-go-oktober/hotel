@@ -1,10 +1,10 @@
 <template>
-  <div class="relative group">
+  <div class="relative inline-block">
     <!-- Main Menu Item -->
     <button
       @click="toggleDropdown"
       @mouseenter="showDropdown = true"
-      @mouseleave="showDropdown = false"
+      @mouseleave="handleMouseLeave"
       class="flex items-center gap-1 cursor-pointer fill-current !px-0 font-subline font-normal underline-offset-[5px] visited:text-black focus:no-underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-focus-dark active:!text-black-500 no-underline hover:underline"
       :aria-expanded="showDropdown"
       aria-haspopup="true"
@@ -24,37 +24,29 @@
     </button>
 
     <!-- Dropdown Menu -->
-    <transition
-      enter-active-class="transition ease-out duration-200"
-      enter-from-class="opacity-0 transform scale-95"
-      enter-to-class="opacity-100 transform scale-100"
-      leave-active-class="transition ease-in duration-150"
-      leave-from-class="opacity-100 transform scale-100"
-      leave-to-class="opacity-0 transform scale-95"
+    <div
+      v-if="showDropdown"
+      @mouseenter="showDropdown = true"
+      @mouseleave="showDropdown = false"
+      class="absolute left-0 top-full mt-2 w-48 bg-white rounded-lg shadow-2xl border-2 border-gray-300 z-[9999]"
+      style="position: absolute; z-index: 9999;"
+      role="menu"
+      aria-orientation="vertical"
+      aria-labelledby="dropdown-button"
     >
-      <div
-        v-show="showDropdown"
-        @mouseenter="showDropdown = true"
-        @mouseleave="showDropdown = false"
-        class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50"
-        role="menu"
-        aria-orientation="vertical"
-        aria-labelledby="dropdown-button"
-      >
-        <div class="py-1" role="none">
-          <NuxtLink
-            v-for="(item, index) in submenu"
-            :key="index"
-            :to="item.path"
-            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-150"
-            role="menuitem"
-            @click="closeDropdown"
-          >
-            {{ item.menuItem }}
-          </NuxtLink>
-        </div>
+      <div class="py-2" role="none">
+        <NuxtLink
+          v-for="(item, index) in submenu"
+          :key="index"
+          :to="item.path"
+          class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-500 hover:text-white transition-colors duration-150 border-b border-gray-200 last:border-b-0"
+          role="menuitem"
+          @click="closeDropdown"
+        >
+          {{ item.menuItem }}
+        </NuxtLink>
       </div>
-    </transition>
+    </div>
   </div>
 </template>
 
@@ -81,11 +73,26 @@ function toggleDropdown() {
 function closeDropdown() {
   showDropdown.value = false;
 }
+
+function handleMouseLeave() {
+  setTimeout(() => {
+    showDropdown.value = false;
+  }, 200);
+}
 </script>
 
 <style scoped>
-/* Ensure dropdown appears above other elements */
-.group:hover .group-hover\:block {
-  display: block;
+/* Force visibility */
+.relative {
+  position: relative !important;
+}
+
+/* Ensure dropdown is above everything */
+[v-if] {
+  position: absolute !important;
+  z-index: 9999 !important;
+  background: white !important;
+  border: 2px solid #d1d5db !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
 }
 </style> 

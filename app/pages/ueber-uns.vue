@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import SliderSection from '~/components/section/SliderSection.vue';
 import TitelVue from '~/components/section/TitelVue.vue'
-import TextCopy from '~/components/module/TextCopy.vue';
 import SubTitle from '~/components/section/SubTitle.vue'
-import VorteilSection from '~/components/section/VorteilSection.vue'
 import ContactSection from '~/components/section/ContactSection.vue'
 import ImageTextModule from '~/components/module/ImageTextModule.vue';
 import VorteilModule from '~/components/module/VorteilModule.vue';
@@ -101,52 +99,38 @@ const vorteilModuleThree = [
 </script>
 
 <template>
-    <main class="max-w-7xl mx-auto px-4">
-        <!-- SliderModule -->
-        <!-- <SliderModule 
-        v-for="(slide, index) in slides"
-        :key="index"
-        :style="{ backgroundImage: `url(${slide.image})` }"
-        class="absolute inset-0 bg-center bg-cover bg-no-repeat transition-opacity duration-700 ease-in-out rounded-[10px]"/> -->
-        <HeroStageModule 
-        imgSrc="//hotel.allnatura.at/wp-content/uploads/allnatura_Belegschaft-6.jpg"
-        imgAlt="ueber-uns"/>
-
-        <TitelVue class="main-title" title="40 Jahre Erfahrung" />
-        <SubTitle subtitle="Entdecken Sie hier die Geschichte der Firma allnatura" />
-        <ImageTextModule v-for="(img, index) in content" :key="index" :imgSrc="img.src" :imgAlt="img.alt"
-            :title="img.title" :textOne="img.textOne" :textTwo="img.textTwo" :reversed="index % 2 === 1" />
-        <TitelVue class="main-title" title="Unsere Werte" />
-        <SubTitle subtitle="Wofür die Firma allnatura steht" />
-        <!-- Three VorteilModule -->
-        <section class="py-12">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="grid gap-6 md:grid-cols-2">
-                    <VorteilModule v-for="(img, index) in vorteilModuleOne" :key="index" :imgSrc="img.src"
-                        :imgAlt="img.alt" :title="img.title" :textOne="img.textOne" :textTwo="img.textTwo"
-                        :textThree="img.textThree" />
-                </div>
+    <HeroStageModule imgSrc="//hotel.allnatura.at/wp-content/uploads/allnatura_Belegschaft-6.jpg" imgAlt="ueber-uns" />
+    <TitelVue class="main-title" title="40 Jahre Erfahrung" />
+    <SubTitle subtitle="Entdecken Sie hier die Geschichte der Firma allnatura" />
+    <ImageTextModule v-for="(img, index) in content" :key="index" :imgSrc="img.src" :imgAlt="img.alt" :title="img.title"
+        :textOne="img.textOne" :textTwo="img.textTwo" :reversed="index % 2 === 1" />
+    <TitelVue class="main-title" title="Unsere Werte" />
+    <SubTitle subtitle="Wofür die Firma allnatura steht" />
+    <!-- Three VorteilModule -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid gap-6 md:grid-cols-2">
+                <VorteilModule v-for="(img, index) in vorteilModuleOne" :key="index" :imgSrc="img.src" :imgAlt="img.alt"
+                    :title="img.title" :textOne="img.textOne" :textTwo="img.textTwo" :textThree="img.textThree" />
             </div>
-        </section>
-        <section class="py-12">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="grid gap-6 md:grid-cols-3">
-                    <VorteilModule v-for="(img, index) in vorteilModuleTwo" :key="index" :imgSrc="img.src"
-                        :imgAlt="img.alt" :title="img.title" :textOne="img.textOne" :textTwo="img.textTwo" />
-                </div>
+        </div>
+    </section>
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid gap-6 md:grid-cols-3">
+                <VorteilModule v-for="(img, index) in vorteilModuleTwo" :key="index" :imgSrc="img.src" :imgAlt="img.alt"
+                    :title="img.title" :textOne="img.textOne" :textTwo="img.textTwo" />
             </div>
-        </section>
-        <section class="py-12">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="grid gap-6 md:grid-cols-2">
-                    <VorteilModule v-for="(img, index) in vorteilModuleThree" :key="index" :imgSrc="img.src"
-                        :imgAlt="img.alt" :title="img.title" :textOne="img.textOne" :textTwo="img.textTwo"
-                        :textThree="img.textThree" />
-                </div>
+        </div>
+    </section>
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid gap-6 md:grid-cols-2">
+                <VorteilModule v-for="(img, index) in vorteilModuleThree" :key="index" :imgSrc="img.src"
+                    :imgAlt="img.alt" :title="img.title" :textOne="img.textOne" :textTwo="img.textTwo"
+                    :textThree="img.textThree" />
             </div>
-        </section>
-
-
-        <ContactSection />
-    </main>
+        </div>
+    </section>
+    <ContactSection />
 </template>

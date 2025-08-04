@@ -21,18 +21,7 @@
     src: url("../fonts/merriweather-sans-v26-latin-regular.woff2") format("woff2");
     
 }
-
-@media (min-width: 76px) {
-    .richtext-wrapper {
-        /* line-height: 150%;
-        font-size: 1.125rem; */
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        
-    }
-  }
-    
+ 
 /* CSS Variables */
 
 @theme {
@@ -77,4 +66,8 @@ h2 {
 /* subtitle */
 .text-subline {
     @apply  hyphens-auto text-balance font-semibold leading-[150%] lg:text-2xl text-xl text-black
+}
+
+.richtext-wrapper {
+    @apply flex flex-col gap-4 leading-relaxed text-base lg:text-lg font-copy;
 }

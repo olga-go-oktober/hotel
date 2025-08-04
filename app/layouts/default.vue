@@ -8,7 +8,7 @@ import ErrorBoundary from '~/components/ErrorBoundary.vue';
   <div>
     <ErrorBoundary>
       <HeaderNavSection />
-      <main>
+      <main class="max-w-7xl mx-auto px-4">
         <slot />
       </main>
       <FooterSection />

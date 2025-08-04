@@ -1,5 +1,5 @@
 <template>
-    <section class="relative max-w-9xl overflow-hidden 2xl:mx-auto 2xl:overflow-visible px-4 md:px-8">
+    <section class="relative max-w-9xl overflow-hidden 2xl:mx-auto 2xl:overflow-visible px-4 md:px-8 my-12">
       <div class="flex flex-wrap gap-6 rounded-[10px] border border-dark-grey bg-white p-6 ">        <!-- <div class="grid gap-6 md:grid-cols-2"> -->
             <ContactModule
                 v-for="(item, index) in contactItems"
@@ -44,7 +44,3 @@ const contactItems = [
   }   
 ]
 </script>
-
-<style scoped>
-  
-</style>

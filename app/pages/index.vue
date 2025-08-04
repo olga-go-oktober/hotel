@@ -6,7 +6,7 @@ import ImageTextSection from '~/components/section/ImageTextSection.vue'
 import GallerySection from '~/components/section/GallerySection.vue'
 import LogoBlock from '~/components/section/LogoSection.vue'
 import VorteilSection from '~/components/section/VorteilSection.vue'
-import StatisticSection from '~/components/section/ContactSection.vue'
+import StatisticSection from '~/components/section/StatisticSection.vue'
 import ContactSection from '~/components/section/ContactSection.vue'
 import TextCopy from '~/components/module/TextCopy.vue'
 import { GALLERY_HOTELZIMMER, GALLERY_PRODUKTVielfalt } from '~/constants/data'
@@ -39,7 +39,7 @@ const paragraph = [
   <main class="max-w-7xl mx-auto px-4">
     <SliderSection />
     <TitelVue class="main-title" title="Die Vorteile Ihrer allnatura Hotelausstattung" />
-    <div class="richtext-wrapper md:text-md">
+    <div class="richtext-wrapper ">
       <TextCopy v-for="(text, index) in paragraph" :key="index" :textOne="text.textOne" />
     </div>    
     <TitelVue class="main-title" title="Entdecken Sie unsere Empfehlungen für Ihr Hotel:" />
@@ -47,11 +47,14 @@ const paragraph = [
     <TitelVue class="main-title" title="Unsere Auszeichnungen, Partnerschaften und Referenzen:" />
     <LogoBlock />
     <TitelVue class="main-title" title="Hotelzimmer von allnatura" />
-    <SubTitle subtitle="Hier finden Sie von uns zusammengestellte Beispielzimmer:" />
+    <div class="richtext-wrapper ">
+      <TextCopy textOne="Hier finden Sie von uns zusammengestellte Beispielzimmer:" />
+    </div>
     <GallerySection :gallery="GALLERY_HOTELZIMMER" />
     <TitelVue class="main-title" title="Entdecken Sie unsere gesamte Produktvielfalt in unserem Shop" />
-    <SubTitle
-      subtitle="Selbstverständlich steht unser gesamtes Sortiment auch für Geschäftskunden zur Verfügung. Sprechen Sie uns an für ein individuelles Angebot:" />
+    <div class="richtext-wrapper ">
+      <TextCopy textOne="Selbstverständlich steht unser gesamtes Sortiment auch für Geschäftskunden zur Verfügung. Sprechen Sie uns an für ein individuelles Angebot:" />
+    </div>
     <GallerySection :gallery="GALLERY_PRODUKTVielfalt" />
     <VorteilSection />
     <StatisticSection />
