@@ -4,6 +4,7 @@ import TitelVue from '~/components/section/TitelVue.vue';
 import ContactSection from '~/components/section/ContactSection.vue';
 import VorteilModule from '~/components/module/VorteilModule.vue';
 import TextCopy from '~/components/module/TextCopy.vue';
+import ContactFormular from '~/components/module/formular/ContactFormular.vue';
 // VorteilModule
 const vorteilModule = [
   {
@@ -46,7 +47,17 @@ const vorteilModule = [
       </div>
     </div>
   </section>
+<!-- Formular -->
+ <!-- all parts  -->
+ <section class="flex flex-col gap-8">
+  <!-- part 1 -->
+   <section class="flex flex-col gap-4">
+    <TitelVue title="Bitte füllen Sie alle mit * gekennzeichneten Felder aus." />
+    <ContactFormular />
 
+   </section>
+
+ </section>
 
 
 </template>

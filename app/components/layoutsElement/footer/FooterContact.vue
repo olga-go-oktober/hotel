@@ -10,10 +10,10 @@ defineProps({
       <p class="footer-title">{{ title }}</p>
       <p class="footer-text">{{ contact?.company }}</p>
       <p class="footer-text">{{ contact?.address }}</p>
-      <p class="">
+      <p class="footer-text">
         <a :href="`tel:${contact?.phone}`">{{ contact?.phone }}</a>
       </p>
-      <p class="">
+      <p class="footer-text">
         <a :href="`mailto:${contact?.email}`">{{ contact?.email }}</a>
       </p>
     </div>

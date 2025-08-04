@@ -19,7 +19,8 @@ export default {
       colors: {
         'light-grey': '#F8F4F0',
         'dark-grey': '#E3DEDA',
-        'black': '#282828',  
+        'black': '#282828',
+        'black-500': '#6f6f6f',
         
 
       },

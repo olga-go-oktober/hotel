@@ -7,7 +7,7 @@ defineProps({
 <template>
   <div class="flex flex-col gap-[14px]">
     <p class="footer-title">{{ title }}</p>
-    <p class="footer-text">
+    <p class="footer-text !leading-[150%]">
       {{ text }}
     </p>
   </div>

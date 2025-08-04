@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import SliderSection from '~/components/section/SliderSection.vue'
 import TitelVue from '~/components/section/TitelVue.vue'
-import SubTitle from '~/components/section/SubTitle.vue'
 import ImageTextSection from '~/components/section/ImageTextSection.vue'
 import GallerySection from '~/components/section/GallerySection.vue'
 import LogoBlock from '~/components/section/LogoSection.vue'

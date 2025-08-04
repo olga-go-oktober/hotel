@@ -18,14 +18,14 @@ defineProps<{
       <ul class="flex flex-col gap-[14px]">
         <li v-for="link in linksOne" :key="link.text">
           <a :href="link.href">
-            <p class="footer-text">{{ link.text }}</p>
+            <p class="footer-text no-underline hover:underline">{{ link.text }}</p>
           </a>
         </li>
       </ul>
       <ul class="flex flex-col gap-[14px]">
         <li v-for="link in linksTwo" :key="link.text">
           <a :href="link.href">
-            <p class="footer-text">{{ link.text }}</p>
+            <p class="footer-text no-underline hover:underline">{{ link.text }}</p>
           </a>
         </li>
       </ul>
