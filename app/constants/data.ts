@@ -38,6 +38,14 @@ export interface ContentItem {
   textOne: string;
   textTwo: string;
 }
+export interface ServiceVorteil {
+  src: string;
+  alt: string;
+  title: string;
+  textOne: string;
+  textTwo: string;
+}
+
 
 // Menu data
 export const MENU_ITEMS: MenuItem[] = [
@@ -99,6 +107,31 @@ export const VORTEIL_DATA: VorteilItem[] = [
     textTwo: 'Bei allnatura erhalten Sie neben der Best-Preis-Garantie auch attraktive Preisstaffeln und Mengenrabatte.'
   }
 ];
+
+// Service&Qualitaet
+export const SERVICE_VORTEIL:  ServiceVorteil[] = [
+  {
+    src: 'https://hotel.allnatura.de/wp-content/uploads/expertise-1.jpg',
+    alt: 'expertise',
+    title: 'Große Expertise im Schlafbereich',
+    textOne: 'Das breite Wissen des kompetenten allnatura-Teams hat sich über 40 Jahre angesammelt. Diese umfangreiche Erfahrung möchten wir gerne an Sie weitergeben.',
+    textTwo: 'Schaffen Sie mit uns ein ganz besonderes Schlaferlebnis, das Ihre Gäste nicht mehr vergessen werden!'
+  },
+  {
+    src: 'https://hotel.allnatura.de/wp-content/uploads/Natura-Bella_Ortho_2-600x600.jpg',
+    alt: 'Natura-Bella_Ortho_2',
+    title: 'Natürlich Wohlfühlen',
+    textOne: 'Mit unseren ökologisch nachhaltigen Produkten werden sich Ihre Gäste rundum wohlfühlen.',
+    textTwo: 'Ob orthopädisch sinnvolle Matratzen, selbstentwickelte Lattenroste oder exklusive Massivholzbetten – alle Produkte des allnatura-Sortiments sind streng auf Schadstoffe geprüft.'
+  },
+  {
+    src: 'https://hotel.allnatura.de/wp-content/uploads/kunde-gast.jpg',
+    alt: 'kunde-gast',
+    title: 'Unsere Kunden – Ihre Gäste',
+    textOne: 'Dank unserer B2C-Reichweite liefern wir Ihnen nicht nur die Zimmer-Ausstattungen – wir liefern Ihnen die Gäste gleich mit!',
+    textTwo: 'Für Liegeproben & Co. empfehlen wir Sie gerne weiter – so genießen unsere Kunden gleichzeitig Ihre Gastfreundschaft im allnatura-Hotelzimmer!'
+  },
+]
 
 // Logo data
 export const LOGO_DATA: LogoItem[] = [
@@ -210,3 +243,4 @@ export const GALLERY_PRODUKTVielfalt: GalleryItem[] = [
     caption: 'Bio-Bettwäsche aus 100% Bio-Baumwolle'
   }
 ]; 
+
