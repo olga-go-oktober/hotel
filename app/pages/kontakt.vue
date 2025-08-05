@@ -4,15 +4,16 @@ import TitelVue from '~/components/section/TitelVue.vue';
 import ContactSection from '~/components/section/ContactSection.vue';
 import VorteilModule from '~/components/module/VorteilModule.vue';
 import TextCopy from '~/components/module/TextCopy.vue';
-import ContactFormular from '~/components/module/formular/ContactFormular.vue';
+import ContactForm from '~/components/module/formular/ContactForm.vue';
+
 // VorteilModule
 const vorteilModule = [
   {
-    src: 'https://hotel.allnatura.de/wp-content/uploads/gebaeude.jpg',
-    alt: 'gebaeude',
+    src: 'https://a.storyblok.com/f/294642/1342x1007/cd1f34128e/landkarte-showrooms_fr.jpg',
+    alt: 'Exhibition',
     title: '',
-    textOne: '',
-    textTwo: '',
+    textOne: 'Flagship-Store/Schlafstudio: Fachberatung durch erfahrene Schlafexperten, eingeschränktes Sortiment',
+    textTwo: 'Ausstellung: keine Fachberatung, eingeschränktes Sortiment',
   },
   {
     src: 'https://hotel.allnatura.de/wp-content/uploads/allnatura-karte.png',
@@ -21,10 +22,9 @@ const vorteilModule = [
     textOne: 'Daten von OpenStreetMap - Veröffentlicht unter ODbL',
     textTwo: '',
   },
-
 ]
-
 </script>
+
 <template>
   <HeroStageModule imgSrc="//hotel.allnatura.at/wp-content/uploads/kontakt_allnatura_hotel.jpg" imgAlt="Kontakt" />
   <TitelVue class="main-title" title="Erleben auch Sie den Service von allnatura" />
@@ -34,6 +34,9 @@ const vorteilModule = [
   <TitelVue class="main-title" title="Ihr direkter Kontakt zu uns" />
   <ContactSection />
   <!-- Contact form -->
+  <ContactForm class="my-24" />
+
+<!-- Map -->
   <TitelVue title="Wir helfen Ihnen gerne weiter!" />
   <div class="richtext-wrapper md:text-md">
     <TextCopy
@@ -47,17 +50,4 @@ const vorteilModule = [
       </div>
     </div>
   </section>
-<!-- Formular -->
- <!-- all parts  -->
- <section class="flex flex-col gap-8">
-  <!-- part 1 -->
-   <section class="flex flex-col gap-4">
-    <TitelVue title="Bitte füllen Sie alle mit * gekennzeichneten Felder aus." />
-    <ContactFormular />
-
-   </section>
-
- </section>
-
-
 </template>
