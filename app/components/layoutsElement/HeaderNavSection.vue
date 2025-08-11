@@ -65,27 +65,3 @@ function closeMenu() {
   </header>
 </template>
 
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
-/* Force dropdown visibility */
-.relative {
-  position: relative !important;
-}
-
-[v-if] {
-  position: absolute !important;
-  z-index: 9999 !important;
-  background: white !important;
-  border: 2px solid #d1d5db !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
-}
-</style>

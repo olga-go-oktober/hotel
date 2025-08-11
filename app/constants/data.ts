@@ -45,7 +45,13 @@ export interface ServiceVorteil {
   textOne: string;
   textTwo: string;
 }
-
+export interface ServiceEinrichtung {
+  src: string;
+  alt: string;
+  title: string;
+  textOne: string;
+  textTwo: string;
+}
 
 // Menu data
 export const MENU_ITEMS: MenuItem[] = [
@@ -132,7 +138,29 @@ export const SERVICE_VORTEIL:  ServiceVorteil[] = [
     textTwo: 'Für Liegeproben & Co. empfehlen wir Sie gerne weiter – so genießen unsere Kunden gleichzeitig Ihre Gastfreundschaft im allnatura-Hotelzimmer!'
   },
 ]
-
+export const SERVICE_EINRICHTUNG:  ServiceEinrichtung[] = [
+  {
+    src: 'https://hotel.allnatura.de/wp-content/uploads/planung2.jpg',
+    alt: 'plannung2',
+    title: 'Planung & Beratung',
+    textOne: 'Eine sorgfältige Planung ist die Grundlage für ein ordentliches Ergebnis! Damit auch bei der Gestaltung Ihres Hotelzimmers nichts schief geht, stehen wir Ihnen bei der Planung Ihrer Zimmer sehr gerne zur Seite.',
+    textTwo: 'Profitieren Sie von unserer 40-jährigen Erfahrung im Bereich des gesunden Schlafens!'
+  },
+  {
+    src: 'https://hotel.allnatura.de/wp-content/uploads/produktion.jpg',
+    alt: 'produktion',
+    title: 'Produktion',
+    textOne: 'Hergestellt werden unsere allnatura-Produkte in Deutschland, Österreich oder dem nahen europäischen Ausland.',
+    textTwo: 'Wir arbeiten mit zahlreichen Manufakturen zusammen, die die Produkte für Ihre Hotelzimmer liebevoll in Handarbeit fertigen – mit natürlichen Materialien und in höchster Qualität!'
+  },
+  {
+    src: 'https://hotel.allnatura.de/wp-content/uploads/montage.jpg',
+    alt: 'kunde-gast',
+    title: 'Lieferung & Montage',
+    textOne: 'Ein Großteil unserer Produkte wird bereits aufgebaut bei Ihnen angeliefert. Den zerlegt gelieferten Produkten sind praktische Aufbauanleitungen beigefügt, sodass die Möbel durch Ihr Serviceteam ganz einfach aufgebaut werden können.',
+    textTwo: 'Auf Anfrage vermitteln wir Ihnen aber gerne auch ein Montage-Team!'
+  },
+]
 // Logo data
 export const LOGO_DATA: LogoItem[] = [
   {

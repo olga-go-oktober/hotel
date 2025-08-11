@@ -9,7 +9,7 @@ import InformationCircle from '~/components/icons/InformationCircle.vue';
         <div class="flex justify-between">
             <div class="grid grid-cols-[24px_auto] gap-2">
                 <InformationCircle />
-                <div class="self-center font-bold leading-[140%]">Info Notification Box</div>
+                <div class="self-center font-bold leading-[140%]">Hinweise zum Datenschutz</div>
 
             </div>
         </div>
