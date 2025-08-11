@@ -20,7 +20,7 @@ import ContactSection from '~/components/section/ContactSection.vue';
          <!-- KontaktPage -->
 
          <!-- ContactSection -->
-          <ContactSection />
+       
 
 
     </main>
