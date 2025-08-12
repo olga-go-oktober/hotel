@@ -30,7 +30,9 @@
           v-if="showButton"
           :type="type"
           :disabled="disabled"
-          :text="text"/>
+          :text="text"
+          :link="link"
+          />
         </div>
       </div>
 
@@ -55,6 +57,7 @@ defineProps({
   showButton: { type: Boolean, default: false },
   type: String as PropType<'button' | 'submit' | 'reset'>,
   disabled: Boolean,
-  text: String
+  text: String,
+  link: String as PropType<string | null>,
 })
 </script>
