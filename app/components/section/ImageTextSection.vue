@@ -10,7 +10,7 @@
       :textTwo="img.textTwo"
       :reversed="index %2 === 1"
       />
-     
+     <!-- button unshowd -->
 </template>
 
 <script setup>

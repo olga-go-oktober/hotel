@@ -1,26 +1,62 @@
 <script setup lang="ts">
+import HeroStageModule from '~/components/module/HeroStageModule.vue';
 import TitelVue from '~/components/section/TitelVue.vue';
-import SubTitle from '~/components/section/SubTitle.vue';
-
+import TextCopy from '~/components/module/TextCopy.vue';
+import ImageTextModule from '~/components/module/ImageTextModule.vue';
+import Map from '~/components/module/Map.vue';
 import ContactSection from '~/components/section/ContactSection.vue';
 
+
+const content = [ 
+   {
+    src: 'https://hotel.allnatura.de/wp-content/uploads/allnatura_hotelausstattung-zimmer-800x560.jpg',
+    alt: 'sanastarComfort_mil02',
+    title: 'Hotelzimmer',
+    textOne: 'Wir haben für Sie Hotelzimmer-Kombinationen zusammengestellt, die alles bieten, was Ihre Gäste sich wünschen. Selbstverständlich bleiben Sie in der Gestaltung flexibel – Ihnen steht unser gesamtes Sortiment zur Verfügung.',
+    textTwo: 'Massivholzmöbel mit natürlicher Oberflächen-Behandlung sind robust und pflegeleicht. Sie schaffen eine wohnlich-warme Atmosphäre, in der sich Ihre Gäste sehr wohlfühlen werden.'
+
+   },
+   {
+    src: 'https://hotel.allnatura.de/wp-content/uploads/allnatura-hotel-bettwaren-800x560.jpg',
+    alt: 'Bettwaren',
+    title: 'Bettwaren',
+    textOne: 'Bleiben Sie auch bei der Bettausstattung für Ihre Gäste natürlich! Bei allnatura finden Sie Matratzen, Bettdecken und Kissen in bester, ökologisch sinnvoller Qualität.',
+    textTwo: 'Freuen Sie sich über langlebige, pflegeleichte Naturbettwaren, die für die besonderen Ansprüche in der Hotellerie bestens geeignet sind. Wir beraten Sie gerne bei der Auswahl.'
+
+   },
+]
 </script>
 
 <template>
-    <main >
+    <main>
         <!-- slider/herosectin -->
-         <TitelVue class="main-title" title="Ihre Hotel-Ausstattung von allnatura" />
-         <SubTitle subtitle="Finden Sie hier das neue Traum-Hotelzimmer für Ihre Gäste"/>
-         <!-- ImageTextModule = ContentStage -->
+        <HeroStageModule imgSrc="//hotel.allnatura.at/wp-content/uploads/allnatura_hotelausstattung-zimmer.jpg"
+            imgAlt="allnatura_hotelausstattung" />
+        <TitelVue class="main-title" title="Ihre Hotel-Ausstattung von allnatura" />
+      
+        <div class="richtext-wrapper md:text-md">
+            <TextCopy textOne="Finden Sie hier das neue Traum-Hotelzimmer für Ihre Gäste" />
+        </div>
+        <!-- ImageTextModule with button -->
 
-         <!-- Base-Slider-Headline -->
+        <ImageTextModule 
+        v-for="(img, index) in content" :key="index" :imgSrc="img.src" :imgAlt="img.alt"
+            :title="img.title" :textOne="img.textOne" :textTwo="img.textTwo" :reversed="index % 2 === 1"
+            :show-button="true"
+            type="button"
+            :disabled="false"
+            text="Mehr erfahren"/>
+            
+
+        <!-- Base-Slider-Headline -->
 
 
 
-         <!-- KontaktPage -->
+        <!-- Map -->
+         <Map />
 
-         <!-- ContactSection -->
-       
+        <!-- ContactSection -->
+        <ContactSection />
 
 
     </main>

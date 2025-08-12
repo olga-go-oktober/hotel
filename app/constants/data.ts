@@ -56,8 +56,7 @@ export interface ServiceEinrichtung {
 // Menu data
 export const MENU_ITEMS: MenuItem[] = [
   { 
-    menuItem: "Hotelausstattung", 
-    path: "/hotelausstattung",
+    menuItem: "Hotelausstattung", path: "/hotelausstattung",
     submenu: [
       { menuItem: "Zimmer", path: "/hotelausstattung/zimmer" },
       { menuItem: "Bettwaren", path: "/hotelausstattung/bettwaren" }

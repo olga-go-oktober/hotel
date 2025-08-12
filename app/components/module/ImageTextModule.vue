@@ -26,25 +26,35 @@
             :textOne="textOne"
             :textTwo="textTwo"
           />
+          <ButtonBgGreen 
+          v-if="showButton"
+          :type="type"
+          :disabled="disabled"
+          :text="text"/>
         </div>
       </div>
-      
+
     </section>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import ImageTitleText from './ImageTitleText.vue'
+import ButtonBgGreen from './ButtonBgGreen.vue'
+import type { PropType } from 'vue'
+
 
 defineProps({
   imgAlt: String,
   imgSrc: String,
-  title: String,
+  title: {type: String, required: true},
   textOne: String,
   textTwo: String,
-  reversed: Boolean
+  reversed: Boolean,
+  // button props
+  showButton: { type: Boolean, default: false },
+  type: String as PropType<'button' | 'submit' | 'reset'>,
+  disabled: Boolean,
+  text: String
 })
 </script>
-
-<style scoped>
-</style>

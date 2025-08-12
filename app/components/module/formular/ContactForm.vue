@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
 import FormButtonField from './FormButtonField.vue'
 import FormInputField from './FormInputField.vue'
 import FormTextField from './FormTextField.vue'
 import FormCheckbox from './FormCheckbox.vue'
 import Notification from './Notification.vue'
 import TitelVue from '~/components/section/TitelVue.vue'
-import { ref } from 'vue'
+import ButtonBgGreen from '../ButtonBgGreen.vue'
 
 const formFieldsOne = [
     { buttonId: "anrede", label: "Anrede", text: "Bitte wählen", required: true },
@@ -53,11 +55,10 @@ function handleSubmit () {
                         <FormCheckbox />
                         <!-- button -->
                         <div class="mt-auto flex flex-col item-center gap-6 py-6 lg:gap-8 xl:flex-row">
-                            <button
+                            <ButtonBgGreen
                             type="submit"
-                            class="relative inline-flex w-max cursor-pointer overflow-hidden fill-current text-center font-copy text-md font-bold no-underline disabled:cursor-not-allowed disabled:text-black-500 lg:outline-2 lg:transition-[color,background-color,border-color,outline-color] justify-center rounded-3xl px-8 py-3 lg:outline-offset-4 bg-dark-green text-white visited:text-white disabled:!bg-dark-grey disabled:!text-black-500 lg:outline-focus-dark lg:hover:bg-black-800 lg:hover:text-white lg:active:bg-black lg:active:text-white">
-                                <span>Absenden</span>
-                            </button>
+                            :disabled= false
+                            text="Abschicken"/>
                         </div>
                     </form>
                 </div>
