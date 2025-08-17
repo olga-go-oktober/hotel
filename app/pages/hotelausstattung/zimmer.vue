@@ -2,9 +2,7 @@
 import TitelVue from '~/components/section/TitelVue.vue';
 import SubTitle from '~/components/section/SubTitle.vue';
 
-definePageMeta({
-  layout: 'default',
-})
+
 </script>
 
 <template>

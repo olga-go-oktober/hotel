@@ -31,7 +31,7 @@
           :type="type"
           :disabled="disabled"
           :text="text"
-          :link="link"
+          :path="path"
           />
         </div>
       </div>
@@ -58,6 +58,6 @@ defineProps({
   type: String as PropType<'button' | 'submit' | 'reset'>,
   disabled: Boolean,
   text: String,
-  link: String as PropType<string | null>,
+  path: String as PropType<string | null>,
 })
 </script>

@@ -13,18 +13,19 @@ const content = [
     alt: 'sanastarComfort_mil02',
     title: 'Hotelzimmer',
     textOne: 'Wir haben für Sie Hotelzimmer-Kombinationen zusammengestellt, die alles bieten, was Ihre Gäste sich wünschen. Selbstverständlich bleiben Sie in der Gestaltung flexibel – Ihnen steht unser gesamtes Sortiment zur Verfügung.',
-    textTwo: 'Massivholzmöbel mit natürlicher Oberflächen-Behandlung sind robust und pflegeleicht. Sie schaffen eine wohnlich-warme Atmosphäre, in der sich Ihre Gäste sehr wohlfühlen werden.'
-
+    textTwo: 'Massivholzmöbel mit natürlicher Oberflächen-Behandlung sind robust und pflegeleicht. Sie schaffen eine wohnlich-warme Atmosphäre, in der sich Ihre Gäste sehr wohlfühlen werden.',
+    path: '/hotelausstattung/zimmer',
    },
    {
     src: 'https://hotel.allnatura.de/wp-content/uploads/allnatura-hotel-bettwaren-800x560.jpg',
     alt: 'Bettwaren',
     title: 'Bettwaren',
     textOne: 'Bleiben Sie auch bei der Bettausstattung für Ihre Gäste natürlich! Bei allnatura finden Sie Matratzen, Bettdecken und Kissen in bester, ökologisch sinnvoller Qualität.',
-    textTwo: 'Freuen Sie sich über langlebige, pflegeleichte Naturbettwaren, die für die besonderen Ansprüche in der Hotellerie bestens geeignet sind. Wir beraten Sie gerne bei der Auswahl.'
-
+    textTwo: 'Freuen Sie sich über langlebige, pflegeleichte Naturbettwaren, die für die besonderen Ansprüche in der Hotellerie bestens geeignet sind. Wir beraten Sie gerne bei der Auswahl.',
+    path: '/hotelausstattung/bettwaren',
    },
 ]
+
 </script>
 
 <template>
@@ -42,10 +43,13 @@ const content = [
         <ImageTextModule 
         v-for="(img, index) in content" :key="index" :imgSrc="img.src" :imgAlt="img.alt"
             :title="img.title" :textOne="img.textOne" :textTwo="img.textTwo" :reversed="index % 2 === 1"
+            
             :show-button="true"
             type="button"
+            
             :disabled="false"
-            text="Mehr erfahren"/>
+            text="Mehr erfahren"
+            :path="img.path"/>
             
 
         <!-- Base-Slider-Headline -->

@@ -32,9 +32,11 @@
     --color-light-grey: #F8F4F0;
     --color-dark-grey: #e3deda;
     --color-black: #282828;
-    --color-black-500: #6f6f6f;
     --color-black-300: #bdbdbd;
-    --color-dark-green: #318741;
+    --color-black-500: #6f6f6f;
+    --color-black-800: #5f5f5f;
+
+    --color-dark-green: #1f5729;
 
 }
 
