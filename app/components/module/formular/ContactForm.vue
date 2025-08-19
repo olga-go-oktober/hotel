@@ -56,9 +56,10 @@ function handleSubmit () {
                         <!-- button -->
                         <div class="mt-auto flex flex-col item-center gap-6 py-6 lg:gap-8 xl:flex-row">
                             <ButtonBgGreen
+                         
                             type="submit"
-                            :disabled= false
-                            text="Abschicken"/>
+                            :disabled= "false">
+                            Abschicken</ButtonBgGreen>
                         </div>
                     </form>
                 </div>

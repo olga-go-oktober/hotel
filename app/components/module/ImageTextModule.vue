@@ -26,7 +26,7 @@
             :textOne="textOne"
             :textTwo="textTwo"
           />
-          <ButtonBgGreen 
+          <ButtonBgGreen   
           v-if="showButton"
           :type="type"
           :disabled="disabled"
