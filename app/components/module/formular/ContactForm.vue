@@ -7,7 +7,7 @@ import FormTextField from './FormTextField.vue'
 import FormCheckbox from './FormCheckbox.vue'
 import Notification from './Notification.vue'
 import TitelVue from '~/components/section/TitelVue.vue'
-import ButtonBgGreen from '../ButtonBgGreen.vue'
+import ButtonBgGreen from '../../ui/ButtonBgGreen.vue'
 
 const formFieldsOne = [
     { buttonId: "anrede", label: "Anrede", text: "Bitte wählen", required: true },

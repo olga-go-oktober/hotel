@@ -21,8 +21,6 @@ import Map from '~/components/module/Map.vue';
   <ContactSection />
   <!-- Contact form -->
   <ContactForm class="my-24" />
-
-
   <TitelVue title="Wir helfen Ihnen gerne weiter!" />
   <div class="richtext-wrapper md:text-md">
     <TextCopy

@@ -5,6 +5,7 @@ import TextCopy from '~/components/module/TextCopy.vue';
 import ImageTextModule from '~/components/module/ImageTextModule.vue';
 import Map from '~/components/module/Map.vue';
 import ContactSection from '~/components/section/ContactSection.vue';
+import Slider from '~/components/module/Slider.vue';
 
 
 const content = [ 
@@ -24,6 +25,13 @@ const content = [
     textTwo: 'Freuen Sie sich über langlebige, pflegeleichte Naturbettwaren, die für die besonderen Ansprüche in der Hotellerie bestens geeignet sind. Wir beraten Sie gerne bei der Auswahl.',
     path: '/hotelausstattung/bettwaren',
    },
+]
+const sliderSource = [
+    {
+        imgSrc: '//hotel.allnatura.de/wp-content/uploads/allnatura-hotel-teppiche.jpg',
+        imgAlt: 'Teppiche',
+
+    },
 ]
 
 </script>
@@ -53,6 +61,13 @@ const content = [
             
 
         <!-- Base-Slider-Headline -->
+         <Slider 
+            v-for="(index, img) in sliderSource"
+            :key="index"
+            :imgSrc="img.imgSrc"
+            :imgAlt="img.imgAlt"
+
+         />
 
 
 

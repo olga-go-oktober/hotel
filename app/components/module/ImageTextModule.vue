@@ -42,7 +42,7 @@
 
 <script setup lang="ts">
 import ImageTitleText from './ImageTitleText.vue'
-import ButtonBgGreen from './ButtonBgGreen.vue'
+import ButtonBgGreen from '../ui/ButtonBgGreen.vue'
 import type { PropType } from 'vue'
 
 

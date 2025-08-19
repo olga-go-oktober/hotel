@@ -23,12 +23,13 @@ function closeMenu() {
   <header class="bg-white shadow-sm">
     <div class="max-w-7xl mx-auto px-4">
       <div class="flex justify-between items-center py-4">
-        <!-- Logo -->
+        <!-- Logo large-->
         <div class="flex-shrink-0">
-          <NuxtLink to="/" class="flex items-center">
-            <img src="/logo.svg" alt="allnatura Logo" class="h-8 w-auto" />
+          <NuxtLink to="/" class="w-[120px] flex items-center lg:w-[156px]">
+            <img src="/logo.svg" alt="allnatura Logo" class="block" />
           </NuxtLink>
         </div>
+        
 
         <!-- Navigation -->
         <div class="flex items-center gap-4">
